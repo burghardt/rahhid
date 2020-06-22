@@ -28,7 +28,7 @@ Compile `rahhid` with:
 
 Sensor test
 -----------
-Run `rahid` without any arguments to measure for 30 seconds:
+Run `rahhid` without any arguments to measure for 30 seconds:
 ```
 # ./rahhid
 Switched LCD backlight off
@@ -58,14 +58,17 @@ Use `cron` to upload data periodically:
 
 Building for OpenWRT
 --------------------
-Download [SDK package](http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk) for your OpenWRT version. Download [hidapi package](https://github.com/openwrt/packages/tree/master/libs/hidapi) and put into
-`package/hidapi`. Install `hidapi` library and headers into SDK with `make` command.
-
-Now put `Makefile.openwrt` into `package/rahhid` directory and build `rahhid` with `make` command.
-
-Install libusb (from OpenWRT repository) on target device with opkg:
+Install `hidapi` and `libusb-1.0` packages on your OpenWRT device.
 ```
-# opkg install libusb-1.0
+# opkg update
+# opkg install hidapi libusb-1.0-0
 ```
 
-Finally install `hidapi_<version>_<arch>.ipk` and `rahhid_<version>_<arch>.ipk` on your OpenWRT device.
+Download [SDK package](http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk)
+for your OpenWRT version. Build `rahhid` package using
+[my OpenWRT package feed](https://github.com/burghardt/openwrt-feed).
+
+Finally install `rahhid_<version>_<arch>.ipk`.
+```
+# opkg install /tmp/rahhid_<version>_<arch>.ipk
+```
