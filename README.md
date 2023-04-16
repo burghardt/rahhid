@@ -17,6 +17,11 @@ Install `libhidapi-dev` (Debian/Ubuntu) or equivalent:
 # sudo apt-get install libhidapi-dev
 ```
 
+On macOS install `hidapi` with [Homebrew](https://brew.sh/):
+```
+# brew install hidapi
+```
+
 Compile `rahhid` with:
 ```
 # make
@@ -60,7 +65,7 @@ Install `hidapi` and `libusb-1.0` packages on your OpenWRT device.
 # opkg install hidapi libusb-1.0-0
 ```
 
-Download [SDK package](http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk)
+Download [SDK package](https://openwrt.org/docs/guide-developer/toolchain/using_the_sdk)
 for your OpenWRT version. Build `rahhid` package using
 [my OpenWRT package feed](https://github.com/burghardt/openwrt-feed).
 
