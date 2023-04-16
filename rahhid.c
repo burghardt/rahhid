@@ -21,7 +21,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <math.h>
-#include <hidapi/hidapi.h>
+#include <sys/wait.h>
+#include <hidapi.h>
 
 int main(int argc, char *argv[])
 {
