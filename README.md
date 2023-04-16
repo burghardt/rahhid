@@ -3,10 +3,6 @@ rahhid
 
 Radioactive@Home HID driver based on `libhidapi` (with simple [ThingSpeak](https://thingspeak.com/) support).
 
-[![Travis-CI](https://travis-ci.org/burghardt/rahhid.svg?branch=master)](https://travis-ci.org/burghardt/rahhid/)
-[![CircleCI](https://circleci.com/gh/burghardt/rahhid/tree/master.svg?style=svg)](https://circleci.com/gh/burghardt/rahhid)
-[![Coverity](https://scan.coverity.com/projects/6133/badge.svg)](https://scan.coverity.com/projects/6133)
-
 Live ThingSpeak demo
 --------------------
 
