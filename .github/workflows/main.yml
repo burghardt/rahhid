@@ -1,0 +1,26 @@
+name: rahhid
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron:  '0 0 * * *'
+
+jobs:
+  test:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+      - name: deps
+        run: |
+          sudo apt-get update
+          sudo apt-get -y --no-install-recommends install \
+               build-essential \
+               libhidapi-libusb-dev
+      - name: clean
+        run: make clean
+      - name: make
+        run: make
+
