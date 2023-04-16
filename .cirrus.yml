@@ -1,0 +1,16 @@
+# https://cirrus-ci.com/github/burghardt/rahhid
+test_task:
+  name: FreeBSD build
+  freebsd_instance:
+    matrix:
+      image_family: freebsd-14-0-snap
+      image_family: freebsd-13-1
+      image_family: freebsd-12-3
+  env:
+    CIRRUS_CLONE_DEPTH: 10
+  pkginstall_script:
+    - pkg install -y comms/hidapi devel/gmake devel/pkgconf
+  compile_script:
+    - gmake
+  install_script:
+    - gmake install
